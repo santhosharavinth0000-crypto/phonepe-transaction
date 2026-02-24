@@ -3,9 +3,8 @@ import os
 import pandas as pd
 import mysql.connector
 
-# ============================================
 # MySQL Connection
-# ============================================
+
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -17,14 +16,11 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS phonepe_db;")
 cursor.execute("USE phonepe_db;")
 conn.commit()
 
-# ============================================
-# YOUR PATH
-# ============================================
+#  PATH
 base_path = r"C:\Users\SMB140\Desktop\pulse-master\data\\"
 
-# ============================================
 # 1. AGGREGATED TRANSACTION
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS aggregated_transaction (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,11 +69,10 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ aggregated_transaction — {len(rows)} rows inserted")
+print(f" aggregated_transaction — {len(rows)} rows inserted")
 
-# ============================================
 # 2. AGGREGATED USER
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS aggregated_user (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -126,11 +121,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ aggregated_user — {len(rows)} rows inserted")
+print(f" aggregated_user — {len(rows)} rows inserted")
 
-# ============================================
+
 # 3. AGGREGATED INSURANCE
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS aggregated_insurance (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -177,11 +172,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ aggregated_insurance — {len(rows)} rows inserted")
+print(f" aggregated_insurance — {len(rows)} rows inserted")
 
-# ============================================
+
 # 4. MAP TRANSACTION
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS map_transaction (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -228,11 +223,10 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ map_transaction — {len(rows)} rows inserted")
+print(f" map_transaction — {len(rows)} rows inserted")
 
-# ============================================
 # 5. MAP USER
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS map_user (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -279,11 +273,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ map_user — {len(rows)} rows inserted")
+print(f" map_user — {len(rows)} rows inserted")
 
-# ============================================
+
 # 6. MAP INSURANCE
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS map_insurance (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -330,11 +324,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ map_insurance — {len(rows)} rows inserted")
+print(f" map_insurance — {len(rows)} rows inserted")
 
-# ============================================
+
 # 7. TOP TRANSACTION
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS top_transaction (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -386,11 +380,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ top_transaction — {len(rows)} rows inserted")
+print(f" top_transaction — {len(rows)} rows inserted")
 
-# ============================================
+
 # 8. TOP USER
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS top_user (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -439,11 +433,11 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ top_user — {len(rows)} rows inserted")
+print(f" top_user — {len(rows)} rows inserted")
 
-# ============================================
+
 # 9. TOP INSURANCE
-# ============================================
+
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS top_insurance (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -495,7 +489,7 @@ cursor.executemany("""
     VALUES (%s, %s, %s, %s, %s, %s, %s)
 """, rows)
 conn.commit()
-print(f"✅ top_insurance — {len(rows)} rows inserted")
+print(f" top_insurance — {len(rows)} rows inserted")
 
 # ============================================
 # CLOSE CONNECTION
