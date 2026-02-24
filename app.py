@@ -3,9 +3,9 @@ import pandas as pd
 import mysql.connector
 import plotly.express as px
 
-# ============================================
+
 # Connection
-# ============================================
+
 def get_data(query):
     conn = mysql.connector.connect(
         host="localhost",
@@ -17,18 +17,18 @@ def get_data(query):
     conn.close()
     return df
 
-# ============================================
+
 # Page Config
-# ============================================
+
 st.set_page_config(
     page_title="PhonePe Transaction Insights",
     page_icon="📱",
     layout="wide"
 )
 
-# ============================================
+
 # Sidebar Navigation
-# ============================================
+
 st.sidebar.title("📱 PhonePe Insights")
 page = st.sidebar.radio("Go to", [
     "Home",
@@ -40,9 +40,9 @@ page = st.sidebar.radio("Go to", [
     "India Map"
 ])
 
-# ============================================
+
 # PAGE 1: HOME
-# ============================================
+
 if page == "Home":
     st.title("📱 PhonePe Transaction Insights Dashboard")
     st.write("Welcome! This dashboard analyzes PhonePe digital payment data across India.")
@@ -64,9 +64,9 @@ if page == "Home":
     with col4:
         st.metric("🛡️ Total Insurance", f"{total_ins['total'][0]/1e6:.2f}M")
 
-# ============================================
+
 # PAGE 2: TRANSACTION ANALYSIS
-# ============================================
+
 elif page == "Transaction Analysis":
     st.title("💳 Transaction Analysis")
 
@@ -132,9 +132,9 @@ elif page == "Transaction Analysis":
                      color="State")
         st.plotly_chart(fig, use_container_width=True)
 
-# ============================================
+
 # PAGE 3: USER & DEVICE ANALYSIS
-# ============================================
+
 elif page == "User & Device Analysis":
     st.title("📱 User & Device Analysis")
 
@@ -201,9 +201,9 @@ elif page == "User & Device Analysis":
                       markers=True)
         st.plotly_chart(fig, use_container_width=True)
 
-# ============================================
+
 # PAGE 4: INSURANCE ANALYSIS
-# ============================================
+
 elif page == "Insurance Analysis":
     st.title("🛡️ Insurance Analysis")
 
@@ -266,9 +266,9 @@ elif page == "Insurance Analysis":
                       markers=True)
         st.plotly_chart(fig, use_container_width=True)
 
-# ============================================
+
 # PAGE 5: MARKET EXPANSION
-# ============================================
+
 elif page == "Market Expansion":
     st.title("🗺️ Market Expansion Analysis")
 
@@ -313,9 +313,9 @@ elif page == "Market Expansion":
                      color="State")
         st.plotly_chart(fig, use_container_width=True)
 
-# ============================================
+
 # PAGE 6: TOP PERFORMERS
-# ============================================
+
 elif page == "Top Performers":
     st.title("🏆 Top Performers")
 
@@ -379,9 +379,9 @@ elif page == "Top Performers":
                      color="Pincode")
         st.plotly_chart(fig, use_container_width=True)
 
-# ============================================
+
 # PAGE 7: INDIA MAP
-# ============================================
+
 elif page == "India Map":
     st.title("🗺️ India Transaction Map")
 
