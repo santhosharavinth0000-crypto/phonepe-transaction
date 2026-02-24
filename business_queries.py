@@ -394,4 +394,4 @@ print(case9c)
 print()
 
 conn.close()
-print("✅ All 9 Business Case Queries Executed Successfully!")
+print(" All 9 Business Case Queries Executed Successfully!")
