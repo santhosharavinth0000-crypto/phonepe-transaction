@@ -8,9 +8,7 @@ conn = mysql.connector.connect(
     database="phonepe_db"
 )
 
-# ============================================
 # CASE 1: Decoding Transaction Dynamics
-# ============================================
 
 # 1a. Transaction by Payment Type
 case1a = pd.read_sql_query("""
@@ -54,9 +52,7 @@ print("CASE 1c - Quarter-wise Growth:")
 print(case1c)
 print()
 
-# ============================================
 # CASE 2: Device Dominance and User Engagement
-# ============================================
 
 # 2a. Top Device Brands
 case2a = pd.read_sql_query("""
@@ -102,9 +98,7 @@ print("CASE 2c - Year-wise User Growth:")
 print(case2c)
 print()
 
-# ============================================
 # CASE 3: Insurance Penetration and Growth
-# ============================================
 
 # 3a. Year-wise Insurance Growth
 case3a = pd.read_sql_query("""
@@ -149,9 +143,7 @@ print("CASE 3c - Quarter-wise Insurance Trend:")
 print(case3c)
 print()
 
-# ============================================
 # CASE 4: Transaction Analysis for Market Expansion
-# ============================================
 
 # 4a. Top States by Transaction Volume
 case4a = pd.read_sql_query("""
@@ -232,9 +224,7 @@ print("CASE 5c - Low Engagement States:")
 print(case5c)
 print()
 
-# ============================================
 # CASE 6: Insurance Engagement Analysis
-# ============================================
 
 # 6a. Top States by Insurance Transactions
 case6a = pd.read_sql_query("""
@@ -265,9 +255,7 @@ print("CASE 6b - Top Districts by Insurance:")
 print(case6b)
 print()
 
-# ============================================
 # CASE 7: Transaction Analysis Across States and Districts
-# ============================================
 
 # 7a. Top States by Transaction
 case7a = pd.read_sql_query("""
@@ -314,9 +302,7 @@ print("CASE 7c - Top Pincodes by Transaction:")
 print(case7c)
 print()
 
-# ============================================
 # CASE 8: User Registration Analysis
-# ============================================
 
 # 8a. Top States by User Registration
 case8a = pd.read_sql_query("""
@@ -360,9 +346,7 @@ print("CASE 8c - Top Pincodes by User Registration:")
 print(case8c)
 print()
 
-# ============================================
 # CASE 9: Insurance Transactions Analysis
-# ============================================
 
 # 9a. Top States by Insurance Transactions
 case9a = pd.read_sql_query("""
